@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name DTLib)(type KiCad)(uri ${KIPRJMOD}/DTLib.pretty)(options "")(descr ""))
+)
