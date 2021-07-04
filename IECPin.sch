@@ -20,20 +20,6 @@ WRITE
 Text HLabel 5300 3200 1    50   BiDi ~ 0
 IECPin
 $Comp
-L Transistor_FET:BSS123 Q1
-U 1 1 60F54F64
-P 5200 3600
-AR Path="/60F1DA80/60F54F64" Ref="Q1"  Part="1" 
-AR Path="/60F695AA/60F54F64" Ref="Q2"  Part="1" 
-AR Path="/60F6BD49/60F54F64" Ref="Q3"  Part="1" 
-F 0 "Q3" H 5404 3646 50  0000 L CNN
-F 1 "BSS123" H 5404 3555 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 5400 3525 50  0001 L CIN
-F 3 "http://www.diodes.com/assets/Datasheets/ds30366.pdf" H 5200 3600 50  0001 L CNN
-	1    5200 3600
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 60F57C0D
 P 5950 3650
@@ -127,7 +113,7 @@ AR Path="/60F6065B" Ref="R?"  Part="1"
 AR Path="/60F1DA80/60F6065B" Ref="R4"  Part="1" 
 AR Path="/60F695AA/60F6065B" Ref="R8"  Part="1" 
 AR Path="/60F6BD49/60F6065B" Ref="R12"  Part="1" 
-F 0 "R12" V 4900 3750 50  0000 L CNN
+F 0 "R12" V 4900 3700 50  0000 L CNN
 F 1 "10K" V 4900 3900 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4730 3900 50  0001 C CNN
 F 3 "~" H 4800 3900 50  0001 C CNN
@@ -148,4 +134,18 @@ Wire Wire Line
 Connection ~ 5300 3900
 Wire Wire Line
 	5300 3900 5300 3800
+$Comp
+L Transistor_FET:AO3400A Q1
+U 1 1 61101294
+P 5200 3600
+AR Path="/60F1DA80/61101294" Ref="Q1"  Part="1" 
+AR Path="/60F695AA/61101294" Ref="Q2"  Part="1" 
+AR Path="/60F6BD49/61101294" Ref="Q3"  Part="1" 
+F 0 "Q3" H 5405 3646 50  0000 L CNN
+F 1 "AO3400A" H 5405 3555 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5400 3525 50  0001 L CIN
+F 3 "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf" H 5200 3600 50  0001 L CNN
+	1    5200 3600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
