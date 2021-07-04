@@ -8,9 +8,9 @@ Title "SD2IEC"
 Date "2021-07-01"
 Rev "A"
 Comp ""
-Comment1 ""
-Comment2 ""
-Comment3 ""
+Comment1 "R2 R3 Can be omitted"
+Comment2 "SW4 (Reset button) optional"
+Comment3 "J5 (IEC Passtrough) optional"
 Comment4 ""
 $EndDescr
 $Comp
@@ -614,8 +614,6 @@ Wire Wire Line
 	8500 6550 3300 6550
 Wire Wire Line
 	8150 4550 8600 4550
-Wire Wire Line
-	8600 4550 8600 6150
 $Comp
 L power:+3.3V #PWR0111
 U 1 1 60F992A3
@@ -642,38 +640,14 @@ Wire Wire Line
 	5750 4050 5750 3950
 Text Label 3750 4550 0    50   ~ 0
 ~SD_CS
-Text Label 6050 6150 0    50   ~ 0
-CARD_DETECT
-Text Label 6050 6550 0    50   ~ 0
-WRITE_PROTECT
+Text Label 3450 6150 0    50   ~ 0
+~CARD_DETECT
+Text Label 3450 6550 0    50   ~ 0
+~WRITE_PROTECT
 Wire Wire Line
 	5750 4950 5750 5300
 Wire Wire Line
 	5750 4350 5750 4650
-Wire Wire Line
-	8600 6150 3300 6150
-$Comp
-L Device:R R3
-U 1 1 60FD94D1
-P 6150 5150
-F 0 "R3" V 6050 5200 50  0000 L CNN
-F 1 "10K" V 6050 5000 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 6080 5150 50  0001 C CNN
-F 3 "~" H 6150 5150 50  0001 C CNN
-	1    6150 5150
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R2
-U 1 1 60FE1EB6
-P 6150 4350
-F 0 "R2" V 6050 4200 50  0000 L CNN
-F 1 "10K" V 6050 4350 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 6080 4350 50  0001 C CNN
-F 3 "~" H 6150 4350 50  0001 C CNN
-	1    6150 4350
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	6300 4350 6350 4350
 Wire Wire Line
@@ -816,7 +790,7 @@ ATmega decoupling
 Wire Wire Line
 	2000 3250 1750 3250
 Wire Wire Line
-	1750 3250 1750 2100
+	1750 3250 1750 2250
 Wire Wire Line
 	1550 2100 1750 2100
 Connection ~ 2000 3250
@@ -916,155 +890,224 @@ NoConn ~ 3300 4250
 NoConn ~ 3300 4350
 NoConn ~ 3300 4450
 NoConn ~ 2850 3000
-$Comp
-L Switch:SW_DIP_x04 SW1
-U 1 1 611100C8
-P 4900 7150
-F 0 "SW1" H 4700 6900 50  0000 C CNN
-F 1 "IEC_SEL" H 5000 6900 50  0000 C CNN
-F 2 "Button_Switch_SMD:SW_DIP_SPSTx04_Slide_6.7x11.72mm_W8.61mm_P2.54mm_LowProfile" H 4900 7150 50  0001 C CNN
-F 3 "~" H 4900 7150 50  0001 C CNN
-	1    4900 7150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3300 6650 4300 6650
 Wire Wire Line
 	4300 6650 4300 6950
 Wire Wire Line
-	4300 6950 4600 6950
+	4300 6950 4950 6950
 Wire Wire Line
 	3300 6450 4200 6450
 Wire Wire Line
 	4200 6450 4200 7050
 Wire Wire Line
-	4200 7050 4600 7050
-Wire Wire Line
-	5200 6950 5300 6950
-Wire Wire Line
-	5300 6950 5300 7050
-Wire Wire Line
-	5300 7250 5200 7250
-Wire Wire Line
-	5200 7150 5300 7150
-Connection ~ 5300 7150
-Wire Wire Line
-	5300 7150 5300 7250
-Wire Wire Line
-	5200 7050 5300 7050
-Connection ~ 5300 7050
-Wire Wire Line
-	5300 7050 5300 7150
-$Comp
-L power:GND #PWR07
-U 1 1 6115605B
-P 5300 7350
-F 0 "#PWR07" H 5300 7100 50  0001 C CNN
-F 1 "GND" H 5305 7177 50  0000 C CNN
-F 2 "" H 5300 7350 50  0001 C CNN
-F 3 "" H 5300 7350 50  0001 C CNN
-	1    5300 7350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5300 7350 5300 7250
-Connection ~ 5300 7250
-Text Notes 5350 7050 0    50   ~ 0
+	4200 7050 4950 7050
+Text Notes 5700 7050 0    50   ~ 0
 IEC 8/9\nIEC 10/11
 $Comp
 L Connector_Generic:Conn_01x03 J6
 U 1 1 611835A9
-P 4650 5650
-F 0 "J6" V 4614 5462 50  0000 R CNN
-F 1 "SERIAL" V 4523 5462 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4650 5650 50  0001 C CNN
-F 3 "~" H 4650 5650 50  0001 C CNN
-	1    4650 5650
-	0    1    -1   0   
+P 5300 6050
+F 0 "J6" H 5350 5850 50  0000 R CNN
+F 1 "SERIAL" H 5650 6050 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5300 6050 50  0001 C CNN
+F 3 "~" H 5300 6050 50  0001 C CNN
+	1    5300 6050
+	1    0    0    1   
 $EndComp
-Text Label 3700 5950 2    50   ~ 0
+Text Label 3450 5950 0    50   ~ 0
 RXD
-Text Label 3700 6050 2    50   ~ 0
+Text Label 3450 6050 0    50   ~ 0
 TXD
 Wire Wire Line
-	4650 6050 4650 5850
+	3300 6050 5100 6050
 Wire Wire Line
-	3300 6050 4650 6050
-Wire Wire Line
-	4550 5850 4550 5950
-Wire Wire Line
-	3300 5950 4550 5950
-Wire Wire Line
-	4750 5900 4750 5850
-$Comp
-L power:GND #PWR0113
-U 1 1 611A588E
-P 4750 5900
-F 0 "#PWR0113" H 4750 5650 50  0001 C CNN
-F 1 "GND" H 4755 5727 50  0000 C CNN
-F 2 "" H 4750 5900 50  0001 C CNN
-F 3 "" H 4750 5900 50  0001 C CNN
-	1    4750 5900
-	1    0    0    -1  
-$EndComp
-Connection ~ 4200 5350
-Wire Wire Line
-	4200 5400 4200 5350
+	3300 5950 5100 5950
 $Comp
 L power:GND #PWR0114
 U 1 1 61266311
-P 4200 5400
-F 0 "#PWR0114" H 4200 5150 50  0001 C CNN
-F 1 "GND" H 4205 5227 50  0000 C CNN
-F 2 "" H 4200 5400 50  0001 C CNN
-F 3 "" H 4200 5400 50  0001 C CNN
-	1    4200 5400
+P 4500 6250
+F 0 "#PWR0114" H 4500 6000 50  0001 C CNN
+F 1 "GND" H 4650 6150 50  0000 C CNN
+F 2 "" H 4500 6250 50  0001 C CNN
+F 3 "" H 4500 6250 50  0001 C CNN
+	1    4500 6250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4200 5350 4100 5350
+	4500 5350 4400 5350
 Wire Wire Line
-	4200 5150 4200 5350
+	4500 5150 4500 5350
 Wire Wire Line
-	4100 5150 4200 5150
+	4400 5150 4500 5150
 $Comp
 L Switch:SW_Push SW2
 U 1 1 611E987F
-P 3900 5150
-F 0 "SW2" H 4350 5150 50  0000 C CNN
-F 1 "Back" H 4500 5150 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS" H 3900 5350 50  0001 C CNN
-F 3 "~" H 3900 5350 50  0001 C CNN
-	1    3900 5150
+P 4200 5150
+F 0 "SW2" H 4650 5150 50  0000 C CNN
+F 1 "PREV" H 4750 5150 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS" H 4200 5350 50  0001 C CNN
+F 3 "~" H 4200 5350 50  0001 C CNN
+	1    4200 5150
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_Push SW3
 U 1 1 611E866B
-P 3900 5350
-F 0 "SW3" H 4350 5350 50  0000 C CNN
-F 1 "Forward / Disc Change" H 4500 5350 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS" H 3900 5550 50  0001 C CNN
-F 3 "~" H 3900 5550 50  0001 C CNN
-	1    3900 5350
+P 4200 5350
+F 0 "SW3" H 4650 5350 50  0000 C CNN
+F 1 "NEXT" H 4750 5350 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS" H 4200 5550 50  0001 C CNN
+F 3 "~" H 4200 5550 50  0001 C CNN
+	1    4200 5350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3550 5250 3550 5150
-Wire Wire Line
-	3550 5150 3700 5150
-Wire Wire Line
-	3300 5250 3550 5250
-Wire Wire Line
-	3300 5350 3700 5350
+	3300 5350 4000 5350
 NoConn ~ 3300 6250
 NoConn ~ 3300 6350
 NoConn ~ 3300 5750
-NoConn ~ 3300 5650
-NoConn ~ 3300 5550
-NoConn ~ 3300 5450
 NoConn ~ 3300 5150
 NoConn ~ 3300 5050
-NoConn ~ 4600 7150
-NoConn ~ 4600 7250
+$Comp
+L Device:R R3
+U 1 1 60FD94D1
+P 6150 5150
+F 0 "R3" V 6050 5200 50  0000 L CNN
+F 1 "10K" V 6050 5000 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 6080 5150 50  0001 C CNN
+F 3 "~" H 6150 5150 50  0001 C CNN
+	1    6150 5150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 60FE1EB6
+P 6150 4350
+F 0 "R2" V 6050 4200 50  0000 L CNN
+F 1 "10K" V 6050 4350 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 6080 4350 50  0001 C CNN
+F 3 "~" H 6150 4350 50  0001 C CNN
+	1    6150 4350
+	0    1    1    0   
+$EndComp
+NoConn ~ 7400 2750
+Wire Wire Line
+	2250 2300 2250 2250
+$Comp
+L power:GND #PWR08
+U 1 1 613913CD
+P 2250 2300
+F 0 "#PWR08" H 2250 2050 50  0001 C CNN
+F 1 "GND" H 2255 2127 50  0000 C CNN
+F 2 "" H 2250 2300 50  0001 C CNN
+F 3 "" H 2250 2300 50  0001 C CNN
+	1    2250 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 2250 2150 2250
+$Comp
+L Switch:SW_Push SW4
+U 1 1 613913D5
+P 1950 2250
+F 0 "SW4" H 1950 2150 50  0000 C CNN
+F 1 "RESET" H 2100 2350 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 1950 2450 50  0001 C CNN
+F 3 "~" H 1950 2450 50  0001 C CNN
+	1    1950 2250
+	1    0    0    -1  
+$EndComp
+Connection ~ 1750 2250
+Wire Wire Line
+	1750 2250 1750 2100
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 613E1EBF
+P 5300 5650
+F 0 "J?" H 5350 5350 50  0000 R CNN
+F 1 "I2C" H 5500 5600 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 5300 5650 50  0001 C CNN
+F 3 "~" H 5300 5650 50  0001 C CNN
+	1    5300 5650
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	3300 5450 5100 5450
+Wire Wire Line
+	3300 5550 5100 5550
+Wire Wire Line
+	3300 5650 5100 5650
+Text Label 3450 5450 0    50   ~ 0
+SCL
+Text Label 3450 5550 0    50   ~ 0
+SDA
+Text Label 3450 5650 0    50   ~ 0
+INTRQ
+Text Label 3450 5250 0    50   ~ 0
+PREV
+Text Label 3450 5350 0    50   ~ 0
+NEXT
+Text Label 3450 6450 0    50   ~ 0
+IEC8_9
+Text Label 3450 6650 0    50   ~ 0
+IEC10_11
+Wire Wire Line
+	3950 5250 3950 5150
+Wire Wire Line
+	3950 5150 4000 5150
+Wire Wire Line
+	3300 5250 3950 5250
+Wire Wire Line
+	4250 6150 4250 6450
+Wire Wire Line
+	4250 6450 8600 6450
+Wire Wire Line
+	8600 4550 8600 6450
+Wire Wire Line
+	3300 6150 4250 6150
+Wire Wire Line
+	4500 5350 4500 5750
+Connection ~ 4500 5350
+Wire Wire Line
+	5100 5750 4500 5750
+Connection ~ 4500 5750
+Wire Wire Line
+	4500 5750 4500 6150
+Wire Wire Line
+	5100 6150 4500 6150
+Connection ~ 4500 6150
+Wire Wire Line
+	4500 6150 4500 6250
+$Comp
+L power:GND #PWR07
+U 1 1 6115605B
+P 5650 7200
+F 0 "#PWR07" H 5650 6950 50  0001 C CNN
+F 1 "GND" H 5655 7027 50  0000 C CNN
+F 2 "" H 5650 7200 50  0001 C CNN
+F 3 "" H 5650 7200 50  0001 C CNN
+	1    5650 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 6950 5650 7050
+Connection ~ 5650 7050
+Wire Wire Line
+	5550 7050 5650 7050
+Wire Wire Line
+	5550 6950 5650 6950
+$Comp
+L Switch:SW_DIP_x02 SW1
+U 1 1 611100C8
+P 5250 7050
+F 0 "SW1" H 5250 6900 50  0000 C CNN
+F 1 "IEC_SEL" H 5250 7300 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_DIP_SPSTx02_Slide_9.78x7.26mm_W7.62mm_P2.54mm" H 5250 7050 50  0001 C CNN
+F 3 "~" H 5250 7050 50  0001 C CNN
+	1    5250 7050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 7050 5650 7200
 $EndSCHEMATC
