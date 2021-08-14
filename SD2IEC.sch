@@ -356,25 +356,6 @@ Connection ~ 8350 1150
 Wire Wire Line
 	8350 1150 8500 1150
 $Comp
-L Connector_Generic:Conn_01x06 J2
-U 1 1 60E19989
-P 6200 1250
-F 0 "J2" H 6280 1242 50  0000 L CNN
-F 1 "Cassette Port" H 5750 1600 50  0000 L CNN
-F 2 "DTLib:COMMODORE_CASSETTE" H 6200 1250 50  0001 C CNN
-F 3 "~" H 6200 1250 50  0001 C CNN
-	1    6200 1250
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	6400 1250 6750 1250
-Wire Wire Line
-	6400 1350 6750 1350
-Wire Wire Line
-	6400 1450 6750 1450
-Wire Wire Line
-	6400 1550 6750 1550
-$Comp
 L power:PWR_FLAG #FLG03
 U 1 1 60E3166D
 P 8350 1600
@@ -385,34 +366,24 @@ F 3 "~" H 8350 1600 50  0001 C CNN
 	1    8350 1600
 	1    0    0    -1  
 $EndComp
-NoConn ~ 6750 1250
-NoConn ~ 6750 1350
-NoConn ~ 6750 1450
-NoConn ~ 6750 1550
 Wire Notes Line
-	6000 650  10350 650 
+	6300 650  10350 650 
 Wire Notes Line
-	6000 650  6000 1900
+	6300 650  6300 1900
 Text Notes 7300 1850 0    50   ~ 0
 3.3V Voltage Regulator\n
-Text Notes 6050 1850 0    50   ~ 0
+Text Notes 6350 1850 0    50   ~ 0
 Power Input
 Wire Wire Line
-	7100 1150 7100 1050
+	6700 1250 7100 1250
 Wire Wire Line
-	6400 1150 6950 1150
-Wire Wire Line
-	6950 1150 6950 1600
+	7100 1250 7100 1600
 Connection ~ 8150 1600
-Wire Wire Line
-	6400 1050 7100 1050
-Wire Wire Line
-	7100 1150 7500 1150
 Connection ~ 8350 1600
 Wire Wire Line
 	8350 1600 9050 1600
 Wire Wire Line
-	6950 1600 8150 1600
+	7100 1600 8150 1600
 $Comp
 L power:+5V #PWR02
 U 1 1 60E78127
@@ -426,7 +397,6 @@ F 3 "" H 7500 900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7500 900  7500 1150
-Connection ~ 7500 1150
 Wire Wire Line
 	7500 1150 7750 1150
 Wire Wire Line
@@ -525,7 +495,7 @@ To C64
 Text Notes 9400 3550 0    50   ~ 0
 To other devices
 Wire Notes Line
-	6000 1900 10350 1900
+	6300 1900 10350 1900
 $Comp
 L Connector:SD_Card J3
 U 1 1 60EEB95B
@@ -1194,4 +1164,94 @@ Text Label 6300 5650 0    50   ~ 0
 BUSY_LED
 Text Label 6300 5750 0    50   ~ 0
 DIRTY_LED
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 6118116A
+P 6500 1150
+F 0 "J2" H 6418 1367 50  0000 C CNN
+F 1 "5VDC IN" H 6418 1276 50  0000 C CNN
+F 2 "Connector_JST:JST_XH_S2B-XH-A-1_1x02_P2.50mm_Horizontal" H 6500 1150 50  0001 C CNN
+F 3 "~" H 6500 1150 50  0001 C CNN
+	1    6500 1150
+	-1   0    0    -1  
+$EndComp
+Connection ~ 7500 1150
+Wire Wire Line
+	6700 1150 7500 1150
+$Comp
+L Mechanical:MountingHole_Pad H?
+U 1 1 612693A9
+P 4550 950
+F 0 "H?" H 4650 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4650 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4550 950 50  0001 C CNN
+F 3 "~" H 4550 950 50  0001 C CNN
+	1    4550 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H?
+U 1 1 61276F4B
+P 4850 950
+F 0 "H?" H 4950 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4950 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4850 950 50  0001 C CNN
+F 3 "~" H 4850 950 50  0001 C CNN
+	1    4850 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H?
+U 1 1 61284428
+P 5150 950
+F 0 "H?" H 5250 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 5250 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5150 950 50  0001 C CNN
+F 3 "~" H 5150 950 50  0001 C CNN
+	1    5150 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H?
+U 1 1 612848F4
+P 5450 950
+F 0 "H?" H 5550 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 5550 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5450 950 50  0001 C CNN
+F 3 "~" H 5450 950 50  0001 C CNN
+	1    5450 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 1050 4550 1200
+Wire Wire Line
+	4550 1200 4850 1200
+Wire Wire Line
+	5450 1200 5450 1050
+Wire Wire Line
+	4850 1050 4850 1200
+Connection ~ 4850 1200
+Wire Wire Line
+	4850 1200 5000 1200
+Wire Wire Line
+	5150 1050 5150 1200
+Connection ~ 5150 1200
+Wire Wire Line
+	5150 1200 5450 1200
+$Comp
+L power:GND #PWR?
+U 1 1 612D81EE
+P 5000 1250
+F 0 "#PWR?" H 5000 1000 50  0001 C CNN
+F 1 "GND" H 5005 1077 50  0000 C CNN
+F 2 "" H 5000 1250 50  0001 C CNN
+F 3 "" H 5000 1250 50  0001 C CNN
+	1    5000 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 1250 5000 1200
+Connection ~ 5000 1200
+Wire Wire Line
+	5000 1200 5150 1200
 $EndSCHEMATC
