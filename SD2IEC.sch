@@ -373,7 +373,7 @@ Wire Notes Line
 Text Notes 7300 1850 0    50   ~ 0
 3.3V Voltage Regulator\n
 Text Notes 6350 1850 0    50   ~ 0
-Power Input
+Power Input\nCassette Port
 Wire Wire Line
 	6700 1250 7100 1250
 Wire Wire Line
@@ -407,7 +407,7 @@ U 1 1 60E82AA4
 P 8750 2550
 F 0 "J4" H 8750 3031 50  0000 C CNN
 F 1 "IEC Male" H 8750 2940 50  0000 C CNN
-F 2 "DTLib:DIN6_MALE" H 8750 2550 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_S6B-XH-A-1_1x06_P2.50mm_Horizontal" H 8750 2550 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 8750 2550 50  0001 C CNN
 	1    8750 2550
 	1    0    0    -1  
@@ -418,7 +418,7 @@ U 1 1 60E8369B
 P 9650 2550
 F 0 "J5" H 9650 3031 50  0000 C CNN
 F 1 "IEC Female" H 9650 2940 50  0000 C CNN
-F 2 "DTLib:CUI_SD-60BV" H 9650 2550 50  0001 C CNN
+F 2 "DTLib:DIN6_PCB_RIGHTANGLE" H 9650 2550 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9650 2550 50  0001 C CNN
 	1    9650 2550
 	-1   0    0    -1  
@@ -1164,85 +1164,16 @@ Text Label 6300 5650 0    50   ~ 0
 BUSY_LED
 Text Label 6300 5750 0    50   ~ 0
 DIRTY_LED
-$Comp
-L Connector_Generic:Conn_01x02 J2
-U 1 1 6118116A
-P 6500 1150
-F 0 "J2" H 6418 1367 50  0000 C CNN
-F 1 "5VDC IN" H 6418 1276 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_S2B-XH-A-1_1x02_P2.50mm_Horizontal" H 6500 1150 50  0001 C CNN
-F 3 "~" H 6500 1150 50  0001 C CNN
-	1    6500 1150
-	-1   0    0    -1  
-$EndComp
 Connection ~ 7500 1150
 Wire Wire Line
 	6700 1150 7500 1150
+Wire Wire Line
+	5000 1250 5000 1200
 $Comp
-L Mechanical:MountingHole_Pad H?
-U 1 1 612693A9
-P 4550 950
-F 0 "H?" H 4650 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 4650 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4550 950 50  0001 C CNN
-F 3 "~" H 4550 950 50  0001 C CNN
-	1    4550 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole_Pad H?
-U 1 1 61276F4B
-P 4850 950
-F 0 "H?" H 4950 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 4950 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4850 950 50  0001 C CNN
-F 3 "~" H 4850 950 50  0001 C CNN
-	1    4850 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole_Pad H?
-U 1 1 61284428
-P 5150 950
-F 0 "H?" H 5250 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 5250 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5150 950 50  0001 C CNN
-F 3 "~" H 5150 950 50  0001 C CNN
-	1    5150 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole_Pad H?
-U 1 1 612848F4
-P 5450 950
-F 0 "H?" H 5550 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 5550 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5450 950 50  0001 C CNN
-F 3 "~" H 5450 950 50  0001 C CNN
-	1    5450 950 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4550 1050 4550 1200
-Wire Wire Line
-	4550 1200 4850 1200
-Wire Wire Line
-	5450 1200 5450 1050
-Wire Wire Line
-	4850 1050 4850 1200
-Connection ~ 4850 1200
-Wire Wire Line
-	4850 1200 5000 1200
-Wire Wire Line
-	5150 1050 5150 1200
-Connection ~ 5150 1200
-Wire Wire Line
-	5150 1200 5450 1200
-$Comp
-L power:GND #PWR?
+L power:GND #PWR0115
 U 1 1 612D81EE
 P 5000 1250
-F 0 "#PWR?" H 5000 1000 50  0001 C CNN
+F 0 "#PWR0115" H 5000 1000 50  0001 C CNN
 F 1 "GND" H 5005 1077 50  0000 C CNN
 F 2 "" H 5000 1250 50  0001 C CNN
 F 3 "" H 5000 1250 50  0001 C CNN
@@ -1250,8 +1181,77 @@ F 3 "" H 5000 1250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5000 1250 5000 1200
+	5000 1200 5150 1200
+Wire Wire Line
+	5150 1200 5450 1200
+Connection ~ 5150 1200
+Wire Wire Line
+	5150 1050 5150 1200
 Connection ~ 5000 1200
 Wire Wire Line
-	5000 1200 5150 1200
+	4850 1200 5000 1200
+Wire Wire Line
+	4850 1050 4850 1200
+Wire Wire Line
+	5450 1200 5450 1050
+Connection ~ 4850 1200
+Wire Wire Line
+	4550 1200 4850 1200
+Wire Wire Line
+	4550 1050 4550 1200
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 612848F4
+P 5450 950
+F 0 "H4" H 5550 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 5550 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5450 950 50  0001 C CNN
+F 3 "~" H 5450 950 50  0001 C CNN
+	1    5450 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 61284428
+P 5150 950
+F 0 "H3" H 5250 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 5250 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5150 950 50  0001 C CNN
+F 3 "~" H 5150 950 50  0001 C CNN
+	1    5150 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 61276F4B
+P 4850 950
+F 0 "H2" H 4950 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4950 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4850 950 50  0001 C CNN
+F 3 "~" H 4850 950 50  0001 C CNN
+	1    4850 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 612693A9
+P 4550 950
+F 0 "H1" H 4650 953 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4650 908 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4550 950 50  0001 C CNN
+F 3 "~" H 4550 950 50  0001 C CNN
+	1    4550 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 6118116A
+P 6500 1250
+F 0 "J2" H 6418 1467 50  0000 C CNN
+F 1 "5VDC IN" H 6418 1376 50  0000 C CNN
+F 2 "DTLib:COMMODORE_CASSETTE" H 6500 1250 50  0001 C CNN
+F 3 "~" H 6500 1250 50  0001 C CNN
+	1    6500 1250
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC
