@@ -368,8 +368,6 @@ F 3 "~" H 8350 1600 50  0001 C CNN
 $EndComp
 Wire Notes Line
 	6300 650  10350 650 
-Wire Notes Line
-	6300 650  6300 1900
 Text Notes 7300 1850 0    50   ~ 0
 3.3V Voltage Regulator\n
 Text Notes 6350 1850 0    50   ~ 0
@@ -406,8 +404,8 @@ L Connector:DIN-6 J4
 U 1 1 60E82AA4
 P 8750 2550
 F 0 "J4" H 8750 3031 50  0000 C CNN
-F 1 "IEC Male" H 8750 2940 50  0000 C CNN
-F 2 "Connector_JST:JST_XH_S6B-XH-A-1_1x06_P2.50mm_Horizontal" H 8750 2550 50  0001 C CNN
+F 1 "IEC (DIN6)" H 8750 2940 50  0000 C CNN
+F 2 "DTLib:DIN6_PCB_RIGHTANGLE" H 8750 2550 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 8750 2550 50  0001 C CNN
 	1    8750 2550
 	1    0    0    -1  
@@ -417,7 +415,7 @@ L Connector:DIN-6 J5
 U 1 1 60E8369B
 P 9650 2550
 F 0 "J5" H 9650 3031 50  0000 C CNN
-F 1 "IEC Female" H 9650 2940 50  0000 C CNN
+F 1 "IEC (DIN6)" H 9650 2940 50  0000 C CNN
 F 2 "DTLib:DIN6_PCB_RIGHTANGLE" H 9650 2550 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9650 2550 50  0001 C CNN
 	1    9650 2550
@@ -471,10 +469,9 @@ Connection ~ 9250 2650
 Wire Wire Line
 	9250 2650 9350 2650
 Wire Wire Line
-	7400 2950 8750 2950
-Connection ~ 8750 2950
+	5750 2950 7200 2950
 Wire Wire Line
-	7400 2750 8400 2750
+	5750 2750 6700 2750
 Connection ~ 8400 2750
 Wire Wire Line
 	8400 2750 8400 2650
@@ -483,17 +480,9 @@ Wire Wire Line
 Wire Wire Line
 	8250 2200 8750 2200
 Wire Notes Line
-	10350 3600 7250 3600
-Wire Notes Line
 	10350 650  10350 3600
-Wire Notes Line
-	7250 650  7250 3600
 Text Notes 7350 3550 0    50   ~ 0
 IEC Connectors
-Text Notes 8650 3550 0    50   ~ 0
-To C64
-Text Notes 9400 3550 0    50   ~ 0
-To other devices
 Wire Notes Line
 	6300 1900 10350 1900
 $Comp
@@ -830,28 +819,26 @@ Wire Wire Line
 Wire Wire Line
 	3300 3750 3950 3750
 Wire Wire Line
-	5100 3300 9250 3300
-Text Label 6400 3300 2    50   ~ 0
+	5100 3300 7100 3300
+Text Label 6250 3300 2    50   ~ 0
 IEC_DATA
 Wire Wire Line
 	5500 3150 5500 3850
 Wire Wire Line
 	5500 3850 5100 3850
 Wire Wire Line
-	5500 3150 9150 3150
-Wire Wire Line
 	5500 2600 5500 2750
 Wire Wire Line
 	5500 2750 5100 2750
 Wire Wire Line
-	5500 2600 8250 2600
-Text Label 6350 2600 2    50   ~ 0
+	5500 2600 6900 2600
+Text Label 6250 2600 2    50   ~ 0
 IEC_ATN
-Text Label 6400 3150 2    50   ~ 0
+Text Label 6250 3150 2    50   ~ 0
 IEC_CLK
-Text Label 7900 2750 2    50   ~ 0
+Text Label 6250 2750 2    50   ~ 0
 ~IEC_SQR
-Text Label 7900 2950 2    50   ~ 0
+Text Label 6250 2950 2    50   ~ 0
 ~IEC_RESET
 NoConn ~ 3300 3550
 NoConn ~ 3300 3950
@@ -959,7 +946,7 @@ F 3 "~" H 6150 4350 50  0001 C CNN
 	1    6150 4350
 	0    1    1    0   
 $EndComp
-NoConn ~ 7400 2750
+NoConn ~ 5750 2750
 Wire Wire Line
 	2250 2300 2250 2250
 $Comp
@@ -981,7 +968,7 @@ U 1 1 613913D5
 P 1950 2250
 F 0 "SW4" H 1950 2150 50  0000 C CNN
 F 1 "RESET" H 2100 2350 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_PUSH_6mm" H 1950 2450 50  0001 C CNN
+F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 1950 2450 50  0001 C CNN
 F 3 "~" H 1950 2450 50  0001 C CNN
 	1    1950 2250
 	1    0    0    -1  
@@ -1167,91 +1154,120 @@ DIRTY_LED
 Connection ~ 7500 1150
 Wire Wire Line
 	6700 1150 7500 1150
-Wire Wire Line
-	5000 1250 5000 1200
-$Comp
-L power:GND #PWR0115
-U 1 1 612D81EE
-P 5000 1250
-F 0 "#PWR0115" H 5000 1000 50  0001 C CNN
-F 1 "GND" H 5005 1077 50  0000 C CNN
-F 2 "" H 5000 1250 50  0001 C CNN
-F 3 "" H 5000 1250 50  0001 C CNN
-	1    5000 1250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5000 1200 5150 1200
-Wire Wire Line
-	5150 1200 5450 1200
-Connection ~ 5150 1200
-Wire Wire Line
-	5150 1050 5150 1200
-Connection ~ 5000 1200
-Wire Wire Line
-	4850 1200 5000 1200
-Wire Wire Line
-	4850 1050 4850 1200
-Wire Wire Line
-	5450 1200 5450 1050
-Connection ~ 4850 1200
-Wire Wire Line
-	4550 1200 4850 1200
-Wire Wire Line
-	4550 1050 4550 1200
-$Comp
-L Mechanical:MountingHole_Pad H4
-U 1 1 612848F4
-P 5450 950
-F 0 "H4" H 5550 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 5550 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5450 950 50  0001 C CNN
-F 3 "~" H 5450 950 50  0001 C CNN
-	1    5450 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole_Pad H3
-U 1 1 61284428
-P 5150 950
-F 0 "H3" H 5250 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 5250 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5150 950 50  0001 C CNN
-F 3 "~" H 5150 950 50  0001 C CNN
-	1    5150 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole_Pad H2
-U 1 1 61276F4B
-P 4850 950
-F 0 "H2" H 4950 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 4950 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4850 950 50  0001 C CNN
-F 3 "~" H 4850 950 50  0001 C CNN
-	1    4850 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L Mechanical:MountingHole_Pad H1
-U 1 1 612693A9
-P 4550 950
-F 0 "H1" H 4650 953 50  0000 L CNN
-F 1 "MountingHole_Pad" H 4650 908 50  0001 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4550 950 50  0001 C CNN
-F 3 "~" H 4550 950 50  0001 C CNN
-	1    4550 950 
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J2
 U 1 1 6118116A
 P 6500 1250
 F 0 "J2" H 6418 1467 50  0000 C CNN
 F 1 "5VDC IN" H 6418 1376 50  0000 C CNN
-F 2 "DTLib:COMMODORE_CASSETTE" H 6500 1250 50  0001 C CNN
+F 2 "DTLib:COMMODORE_CASSETTE_EdgeMount" H 6500 1250 50  0001 C CNN
 F 3 "~" H 6500 1250 50  0001 C CNN
 	1    6500 1250
 	-1   0    0    1   
 $EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J8
+U 1 1 611E26EF
+P 6900 2150
+F 0 "J8" V 7000 2300 50  0000 L CNN
+F 1 "IEC_ALT1" V 7000 1800 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical" H 6900 2150 50  0001 C CNN
+F 3 "~" H 6900 2150 50  0001 C CNN
+	1    6900 2150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J9
+U 1 1 611E648F
+P 7550 2150
+F 0 "J9" V 7650 2300 50  0000 L CNN
+F 1 "IEC_ALT2" V 7650 1800 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical" H 7550 2150 50  0001 C CNN
+F 3 "~" H 7550 2150 50  0001 C CNN
+	1    7550 2150
+	0    -1   -1   0   
+$EndComp
+Wire Notes Line
+	6300 650  6300 3600
+Wire Notes Line
+	6300 3600 10350 3600
+Connection ~ 8750 2950
+Wire Wire Line
+	6700 2350 6700 2750
+Connection ~ 6700 2750
+Wire Wire Line
+	6700 2750 7350 2750
+Wire Wire Line
+	7350 2350 7350 2750
+Connection ~ 7350 2750
+Wire Wire Line
+	7350 2750 8400 2750
+Wire Wire Line
+	6900 2350 6900 2600
+Connection ~ 6900 2600
+Wire Wire Line
+	6900 2600 7550 2600
+Wire Wire Line
+	7550 2350 7550 2600
+Connection ~ 7550 2600
+Wire Wire Line
+	7550 2600 8250 2600
+Wire Wire Line
+	7000 2350 7000 3150
+Wire Wire Line
+	5500 3150 7000 3150
+Connection ~ 7000 3150
+Wire Wire Line
+	7650 2350 7650 3150
+Wire Wire Line
+	7000 3150 7650 3150
+Connection ~ 7650 3150
+Wire Wire Line
+	7650 3150 9150 3150
+Wire Wire Line
+	7100 2350 7100 3300
+Connection ~ 7100 3300
+Wire Wire Line
+	7100 3300 7750 3300
+Wire Wire Line
+	7750 2350 7750 3300
+Connection ~ 7750 3300
+Wire Wire Line
+	7750 3300 9250 3300
+Wire Wire Line
+	7850 2350 7850 2950
+Connection ~ 7850 2950
+Wire Wire Line
+	7850 2950 8750 2950
+Wire Wire Line
+	7200 2350 7200 2950
+Connection ~ 7200 2950
+Wire Wire Line
+	7200 2950 7850 2950
+$Comp
+L power:GND #PWR0116
+U 1 1 61381102
+P 6800 2450
+F 0 "#PWR0116" H 6800 2200 50  0001 C CNN
+F 1 "GND" H 6805 2277 50  0001 C CNN
+F 2 "" H 6800 2450 50  0001 C CNN
+F 3 "" H 6800 2450 50  0001 C CNN
+	1    6800 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 6138179F
+P 7450 2450
+F 0 "#PWR0117" H 7450 2200 50  0001 C CNN
+F 1 "GND" H 7455 2277 50  0001 C CNN
+F 2 "" H 7450 2450 50  0001 C CNN
+F 3 "" H 7450 2450 50  0001 C CNN
+	1    7450 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 2350 6800 2450
+Wire Wire Line
+	7450 2350 7450 2450
 $EndSCHEMATC
